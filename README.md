@@ -5,7 +5,7 @@
 
 ![Alt text](https://cdn.prod.website-files.com/67bde9057c9d78157874e100/67c1d1122127f0a9ce202197_epydemix-logo-p-500.png)
 
-This repository contains real-world population data and synthetic contact matrices used for epidemic modeling and simulation in the [**epydemix**](https://github.com/ngozzi/epydemix/tree/main) python package. The data covers demographic distributions and various contact matrices for more than $400$ regions worldwide.
+This repository contains real-world population data and synthetic contact matrices used for epidemic modeling and simulation in the [**epydemix**](https://github.com/epistorm/epydemix/tree/main) python package. The data covers demographic distributions and various contact matrices for more than $400$ regions worldwide.
 
 The contact matrices indicate interactions between individuals in different contexts (e.g., home, work, school, community) and are sourced from the following studies:
 - [Inferring high-resolution human mixing patterns for disease modeling](https://www.nature.com/articles/s41467-020-20544-y) (`mistry_2021`)
@@ -16,7 +16,7 @@ When using the contact data provided by the **Epydemix** package please ensure t
 
 ## Supported Geographies
 
-A comprehensive list of supported geographies can be found in the [locations.csv](https://github.com/ngozzi/epydemix-data/blob/main/locations.csv) file. This file provides detailed information about the available contact matrices and population data for each location. A sample of the file is shown below:
+A comprehensive list of supported geographies can be found in the [locations.csv](https://github.com/epistorm/epydemix-data/blob/main/locations.csv) file. This file provides detailed information about the available contact matrices and population data for each location. A sample of the file is shown below:
 
 | **location**    | **primary_contact_source** | **mistry_2021** | **prem_2021** | **prem_2017** | **population_source** |
 |-----------------|----------------------------|-----------------|---------------|---------------|------------------------|
