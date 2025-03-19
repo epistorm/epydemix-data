@@ -83,7 +83,7 @@ The **Epydemix** package provides flexibility in loading demographic data and co
 Below is an example of how to load population data for the United States, specifying both online and offline import options:
 
 ```python
-from epydemix.model import load_epydemix_population
+from epydemix.population import load_epydemix_population
 
 # Example 1: Online import (data will be fetched from GitHub)
 population_online = load_epydemix_population(
