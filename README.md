@@ -84,9 +84,10 @@ Below is an example of how to load population data for the United States, specif
 
 ```python
 from epydemix.population import load_epydemix_population
+from epydemix.model import load_predefined_model
 
 # Example 1: Online import (data will be fetched from GitHub)
-population_online = load_epydemix_population(
+population = load_epydemix_population(
     population_name="United_States",
     # Specify the preferred contact data source (needed only if you want to override the default primary source)
     contacts_source="mistry_2021",  
@@ -95,7 +96,7 @@ population_online = load_epydemix_population(
 
 # Example 2: Offline import (data will be loaded from a local directory)
 # Ensure that the folder is downloaded locally before running this
-population_offline = load_epydemix_population(
+population = load_epydemix_population(
     population_name="United_States",
     path_to_data="path/to/local/epydemix_data/",  # Path to the local data folder
     # Specify the preferred contact data source (needed only if you want to override the default primary source)
@@ -103,10 +104,11 @@ population_offline = load_epydemix_population(
     layers=["home", "work", "school", "community"]  # Load contact layers (by default all layers are imported)
 )
 
+# Create model
+model = load_predefined_model(model_name="SIR")
+
 # Use the population in your epidemic model
-model.set_population(population=population_online)  # Using online data
-# or
-model.set_population(population=population_offline)  # Using offline data
+model.set_population(population=population) 
 ```
 
 ---
