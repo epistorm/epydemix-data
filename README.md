@@ -14,7 +14,7 @@ The contact matrices indicate interactions between individuals in different cont
 - [Projecting contact matrices in 177 geographical regions: An update and comparison with empirical data for the COVID-19 era](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009098) (`prem_2021`)
 - [Projecting social contact matrices in 152 countries using contact surveys and demographic data](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005697) (`prem_2017`)
 
-Contact matrices from `mistry_2021` are 85×85 in dimension, with each row and column representing a single-year age group, and the last one corresponding to ages 84 and above. In contrast, contact matrices from `prem_2021` and `prem_2017` are 16×16, with each row and column representing a 5-year age group (0–4, 5–9, etc.), and the last group covering ages 75 and above.
+**Note**: contact matrices from `mistry_2021` are 85×85 in dimension, with each row and column representing a single-year age group, and the last one corresponding to ages 84 and above. In contrast, contact matrices from `prem_2021` and `prem_2017` are 16×16, with each row and column representing a 5-year age group (0–4, 5–9, etc.), and the last group covering ages 75 and above.
 
 When using the contact data provided by the **Epydemix** package please ensure that you cite the relevant research papers associated with each data source. 
 
