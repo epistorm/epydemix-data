@@ -77,10 +77,10 @@ Where:
 
 ### Using Data with the **Epydemix** Package
 
-The **Epydemix** package provides flexibility in loading demographic data and contact matrices for various regions. The `epydemix.model.load_epydemix_population` function allows you to load this data either via **online import** (fetching from a remote source) or **offline import** (loading from a local directory).
+The **Epydemix** package provides flexibility in loading demographic data and contact matrices for various regions. The `epydemix.population.load_epydemix_population` function allows you to load this data either via **online import** (fetching from this repository) or **offline import** (loading from a local directory).
 
-- **Online Import**: If `path_to_data` is not provided, **Epydemix** will attempt to import the data directly from GitHub.
-- **Offline Import**: If `path_to_data` is provided, **Epydemix** will attempt to load the data from a local directory. For this option, users must first download the corresponding data folder.
+- **Online Import**: If `path_to_data` is not provided, **Epydemix** will attempt to import the data directly from this GitHub repository.
+- **Offline Import**: If `path_to_data` is provided, **Epydemix** will attempt to load the data from a local directory. For this option, users must first download the corresponding data folder hosted on this GitHub repository.
 
 ### Example: Loading Population Data for the United States
 
