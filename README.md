@@ -125,5 +125,5 @@ This project is licensed under the GPL-3.0 License. See the [LICENSE](LICENSE) f
 
 ## Contact
 
-For questions or issues, please open an issue on GitHub or contact the maintainer at `epydemix@isi.it`.
+For questions or issues, please open an issue on GitHub or contact the maintainers at `epydemix@isi.it`.
 
