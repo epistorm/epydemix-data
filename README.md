@@ -115,7 +115,8 @@ model = load_predefined_model(model_name="SIR")
 model.set_population(population=population) 
 ```
 
-**Note:** By default, contact matrices and population data are imported using five age groups: 0–4, 5–19, 20–49, 50–64, and 65+. Custom age groupings can be specified during the import step. For more details, see this [tutorial](https://github.com/epistorm/epydemix/blob/main/tutorials/2_Modeling_with_Population_Data.ipynb).
+**Note**: By default, contact matrices and population data are imported using five age groups: 0–4, 5–19, 20–49, 50–64, and 65+. Custom age groupings can be specified during the import step. For more details, see this [tutorial](https://github.com/epistorm/epydemix/blob/main/tutorials/2_Modeling_with_Population_Data.ipynb).
+
 ---
 
 ## License
