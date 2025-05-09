@@ -122,7 +122,7 @@ model.set_population(population=population)
 The preprint describing the development of Epydemix is available [here](https://www.medrxiv.org/content/10.1101/2025.05.07.25327151v1).
 To reference our work, please use the following citation:
 ```
-@article {gozzi2025epydemix,
+@article{gozzi2025epydemix,
 	author = {Gozzi, Nicol{\`o} and Chinazzi, Matteo and Davis, Jessica T. and Gioannini, Corrado and Rossi, Luca and Ajelli, Marco and Perra, Nicola and Vespignani, Alessandro},
 	title = {Epydemix: An open-source Python package for epidemic modeling with integrated approximate Bayesian calibration},
 	elocation-id = {2025.05.07.25327151},
