@@ -118,7 +118,24 @@ model.set_population(population=population)
 **Note**: By default, contact matrices and population data are imported using five age groups: 0–4, 5–19, 20–49, 50–64, and 65+. Custom age groupings can be specified during the import step. For more details, see this [tutorial](https://github.com/epistorm/epydemix/blob/main/tutorials/2_Modeling_with_Population_Data.ipynb).
 
 ---
+## Citation 
+The preprint describing the development of Epydemix is available [here](https://www.medrxiv.org/content/10.1101/2025.05.07.25327151v1).
+To reference our work, please use the following citation:
+```
+@article {gozzi2025epydemix,
+	author = {Gozzi, Nicol{\`o} and Chinazzi, Matteo and Davis, Jessica T. and Gioannini, Corrado and Rossi, Luca and Ajelli, Marco and Perra, Nicola and Vespignani, Alessandro},
+	title = {Epydemix: An open-source Python package for epidemic modeling with integrated approximate Bayesian calibration},
+	elocation-id = {2025.05.07.25327151},
+	year = {2025},
+	doi = {10.1101/2025.05.07.25327151},
+	publisher = {Cold Spring Harbor Laboratory Press},
+	URL = {https://www.medrxiv.org/content/early/2025/05/08/2025.05.07.25327151},
+	eprint = {https://www.medrxiv.org/content/early/2025/05/08/2025.05.07.25327151.full.pdf},
+	journal = {medRxiv}
+}
+```
 
+---
 ## License
 
 This project is licensed under the GPL-3.0 License. See the [LICENSE](LICENSE) file for more details.
