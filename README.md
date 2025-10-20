@@ -24,11 +24,11 @@ A comprehensive list of supported geographies can be found in the [locations.csv
 
 | **location**    | **primary_contact_source** | **mistry_2021** | **prem_2021** | **prem_2017** | **population_source** |
 |-----------------|----------------------------|-----------------|---------------|---------------|------------------------|
-| Afghanistan     | prem_2021                   | False          | True          | False         | https://population.un.org/wpp/Download/Standard/CSV/ |
-| Albania         | prem_2021                   | False          | True          | True          | https://population.un.org/wpp/Download/Standard/CSV/ |
-| Algeria         | prem_2021                   | False          | True          | True          | https://population.un.org/wpp/Download/Standard/CSV/ |
-| Andorra         | prem_2021                   | False          | False         | True          | https://population.un.org/wpp/Download/Standard/CSV/ |
-| Angola          | prem_2021                   | False          | True          | False         | https://population.un.org/wpp/Download/Standard/CSV/ |
+| Afghanistan     | prem_2021                   | False          | True          | False         | https://population.un.org/wpp/ |
+| Albania         | prem_2021                   | False          | True          | True          | https://population.un.org/wpp/ |
+| Algeria         | prem_2021                   | False          | True          | True          | https://population.un.org/wpp/ |
+| Andorra         | prem_2021                   | False          | False         | True          | https://population.un.org/wpp/ |
+| Angola          | prem_2021                   | False          | True          | False         | https://population.un.org/wpp/ |
 | ...             | ...                         | ...            | ...           | ...           | ...                    |
 
 
@@ -36,7 +36,7 @@ The file contains the following information:
 - **Location Names**: The geographic regions for which contact and demographic data are available.
 - **Primary Contact Source**: The default contact matrix source used by **Epydemix** for each location. If a specific contact source isn't specified, **Epydemix** will attempt to import the primary source listed. When available, Mistry 2021 is prioritized as the primary source, followed by Prem 2021, and then Prem 2017.
 - **Availability of Contact Matrices**: The file indicates whether contact matrices are available from the Mistry 2021, Prem 2021, or Prem 2017 studies for each location. Some locations may have multiple sources, while others may only have one.
-- **Population Data Source**: The file also provides the source of demographic data, primarily from the [United Nations World Population Prospects 2024](https://population.un.org/wpp/).
+- **Population Data Source**: The file also provides the source of demographic data, such as the [United Nations World Population Prospects 2024](https://population.un.org/wpp/) and the [US Census Bureau](https://api.census.gov/data/2023/pep/charv) (2023).
 
 
 ### Example Folder Structure: `United_States`
