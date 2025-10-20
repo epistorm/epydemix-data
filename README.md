@@ -36,7 +36,7 @@ The file contains the following information:
 - **Location Names**: The geographic regions for which contact and demographic data are available.
 - **Primary Contact Source**: The default contact matrix source used by **Epydemix** for each location. If a specific contact source isn't specified, **Epydemix** will attempt to import the primary source listed. When available, Mistry 2021 is prioritized as the primary source, followed by Prem 2021, and then Prem 2017.
 - **Availability of Contact Matrices**: The file indicates whether contact matrices are available from the Mistry 2021, Prem 2021, or Prem 2017 studies for each location. Some locations may have multiple sources, while others may only have one.
-- **Population Data Source**: The file also provides the source of demographic data, such as the [United Nations World Population Prospects 2024](https://population.un.org/wpp/) and the [US Census Bureau](https://api.census.gov/data/2023/pep/charv).
+- **Population Data Source**: The file also provides the source of demographic data, such as the [United Nations World Population Prospects 2024](https://population.un.org/wpp/) and the [US Census Bureau](https://api.census.gov/data/2023/pep/charv) (2023).
 
 
 ### Example Folder Structure: `United_States`
