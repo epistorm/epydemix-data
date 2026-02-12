@@ -130,7 +130,13 @@ model.set_population(population=population)
 **Note**: By default, contact matrices and population data are imported using five age groups: 0–4, 5–19, 20–49, 50–64, and 65+. Custom age groupings can be specified during the import step. For more details, see this [tutorial](https://github.com/epistorm/epydemix/blob/main/tutorials/2_Modeling_with_Population_Data.ipynb).
 
 ---
-## Citation 
+
+## Versioning
+
+This repository is versioned using git tags. Each release (e.g., `v1.0.0`) represents a snapshot of the data that can be referenced for reproducibility. The `load_epydemix_population` function in the **epydemix** package points to a specific version of this repository by default, ensuring consistent results across runs. Users can override the version to use a different data release.
+
+---
+## Citation
 The preprint describing the development of Epydemix is available [here](https://www.medrxiv.org/content/10.1101/2025.05.07.25327151v1).
 To reference our work, please use the following citation:
 ```
