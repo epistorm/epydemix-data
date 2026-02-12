@@ -20,56 +20,58 @@ When using the contact data provided by the **Epydemix** package please ensure t
 
 ## Supported Geographies
 
-A comprehensive list of supported geographies can be found in the [locations.csv](https://github.com/epistorm/epydemix-data/blob/main/locations.csv) file. This file provides detailed information about the available contact matrices and population data for each location. A sample of the file is shown below:
+A comprehensive list of supported geographies can be found in the [locations.csv](https://github.com/epistorm/epydemix-data/blob/main/data/age/locations.csv) file. This file provides detailed information about the available contact matrices and population data for each location. A sample of the file is shown below:
 
-| **location**    | **primary_contact_source** | **mistry_2021** | **prem_2021** | **prem_2017** | **population_source** |
-|-----------------|----------------------------|-----------------|---------------|---------------|------------------------|
-| Afghanistan     | prem_2021                   | False          | True          | False         | https://population.un.org/wpp/ |
-| Albania         | prem_2021                   | False          | True          | True          | https://population.un.org/wpp/ |
-| Algeria         | prem_2021                   | False          | True          | True          | https://population.un.org/wpp/ |
-| Andorra         | prem_2021                   | False          | False         | True          | https://population.un.org/wpp/ |
-| Angola          | prem_2021                   | False          | True          | False         | https://population.un.org/wpp/ |
-| ...             | ...                         | ...            | ...           | ...           | ...                    |
+| **location**    | **primary_contact_source** | **contact_sources**       | **population_source** |
+|-----------------|----------------------------|---------------------------|-----------------------|
+| Afghanistan     | prem_2021                  | prem_2021                 | https://population.un.org/wpp/ |
+| Albania         | prem_2021                  | prem_2021\|prem_2017      | https://population.un.org/wpp/ |
+| Algeria         | prem_2021                  | prem_2021\|prem_2017      | https://population.un.org/wpp/ |
+| Andorra         | prem_2017                  | prem_2017                 | https://population.un.org/wpp/ |
+| Angola          | prem_2021                  | prem_2021                 | https://population.un.org/wpp/ |
+| ...             | ...                        | ...                       | ...                   |
 
 
 The file contains the following information:
 - **Location Names**: The geographic regions for which contact and demographic data are available.
 - **Primary Contact Source**: The default contact matrix source used by **Epydemix** for each location. If a specific contact source isn't specified, **Epydemix** will attempt to import the primary source listed. When available, Mistry 2021 is prioritized as the primary source, followed by Prem 2021, and then Prem 2017.
-- **Availability of Contact Matrices**: The file indicates whether contact matrices are available from the Mistry 2021, Prem 2021, or Prem 2017 studies for each location. Some locations may have multiple sources, while others may only have one.
+- **Contact Sources**: A pipe-separated list of all available contact matrix sources for each location (e.g., `prem_2021|prem_2017`). Some locations may have multiple sources, while others may only have one.
 - **Population Data Source**: The file also provides the source of demographic data, such as the [United Nations World Population Prospects 2024](https://population.un.org/wpp/) and the [US Census Bureau](https://api.census.gov/data/2023/pep/charv) (2023).
 
 
 ### Example Folder Structure: `United_States`
 
-Each location folder is organized as follows:
+The data is organized by demographic dimension (e.g., `age`), then by location:
 
 ```
-United_States/
-    ├── demographic/
-    │   └── age_distribution.csv
-    ├── contact_matrices/
-        ├── mistry_2021/
-        │   ├── contacts_matrix_all.csv
-        │   ├── contacts_matrix_home.csv
-        │   ├── contacts_matrix_work.csv
-        │   ├── contacts_matrix_community.csv
-        │   └── contacts_matrix_school.csv
-        ├── prem_2017/
-        │   ├── ...
-        └── prem_2021/
-            ├── ...
+data/
+└── age/
+    └── United_States/
+        ├── demographic/
+        │   └── population.csv
+        └── contact_matrices/
+            ├── mistry_2021/
+            │   ├── all.csv
+            │   ├── home.csv
+            │   ├── work.csv
+            │   ├── community.csv
+            │   └── school.csv
+            ├── prem_2017/
+            │   ├── ...
+            └── prem_2021/
+                ├── ...
 ```
 Where:
 - **`demographic/`**: Contains demographic data for the population of the United States.
-  - **`age_distribution.csv`**: A CSV file detailing the population distribution by age group.
-  
+  - **`population.csv`**: A CSV file detailing the population distribution by age group.
+
 - **`contact_matrices/`**: This directory contains the contact matrices, which describe interaction patterns between different age groups in various contexts.
   - **`mistry_2021/`**: Contains contact matrices from the Mistry 2021 study, with data separated by context (e.g., home, work, school, community).
-    - **`contacts_matrix_all.csv`**: Aggregated contact matrix across all contexts.
-    - **`contacts_matrix_home.csv`**: Contact matrix for interactions within households.
-    - **`contacts_matrix_work.csv`**: Contact matrix for workplace interactions.
-    - **`contacts_matrix_community.csv`**: Contact matrix for community-based interactions.
-    - **`contacts_matrix_school.csv`**: Contact matrix for interactions in schools.
+    - **`all.csv`**: Aggregated contact matrix across all contexts.
+    - **`home.csv`**: Contact matrix for interactions within households.
+    - **`work.csv`**: Contact matrix for workplace interactions.
+    - **`community.csv`**: Contact matrix for community-based interactions.
+    - **`school.csv`**: Contact matrix for interactions in schools.
   - **`prem_2017/`**: Contains similar contact matrix files from the Prem 2017 study, broken down by the same contexts (home, work, school, community, all).
   - **`prem_2021/`**: Contains updated contact matrices from the Prem 2021 study, also structured by context.
 
