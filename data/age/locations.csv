@@ -400,7 +400,7 @@ Uganda,prem_2021,prem_2021|prem_2017,https://population.un.org/wpp/
 Ukraine,prem_2021,prem_2021|prem_2017,https://population.un.org/wpp/
 United_Arab_Emirates,prem_2021,prem_2021|prem_2017,https://population.un.org/wpp/
 United_Kingdom,mistry_2021,mistry_2021|prem_2021|prem_2017,https://population.un.org/wpp/
-United_States,mistry_2021,mistry_2021|prem_2021|prem_2017,https://api.census.gov/data/2023/pep/charv
+United_States,mistry_2021,mistry_2021|prem_2021|prem_2017|litvinova_2025,https://api.census.gov/data/2023/pep/charv
 United_States_Alabama,mistry_2021,mistry_2021,https://api.census.gov/data/2023/pep/charv
 United_States_Alaska,mistry_2021,mistry_2021,https://api.census.gov/data/2023/pep/charv
 United_States_Arizona,mistry_2021,mistry_2021,https://api.census.gov/data/2023/pep/charv
