@@ -10,9 +10,9 @@
 This repository contains real-world population data and contact matrices used for epidemic modeling and simulation in the [**epydemix**](https://github.com/epistorm/epydemix/tree/main) python package. The data covers demographic distributions and contact matrices for more than $400$ regions worldwide.
 
 The data is organized by **demographic attribute**. Each attribute has its own set of locations, contact matrices, and population data. Currently supported attributes:
-- **`age`** — Age-stratified demographic and contact data
-- **`sex`** — Sex-stratified demographic and contact data (currently available for the United States only)
-- **`race_ethnicity`** — Race/ethnicity-stratified demographic and contact data (currently available for the United States only)
+- **`age`** — Age-stratified demographic and contact data (located at `data/`)
+- **`sex`** — Sex-stratified demographic and contact data (currently available for the United States only; located at `data/other_attributes/sex/`)
+- **`race_ethnicity`** — Race/ethnicity-stratified demographic and contact data (currently available for the United States only; located at `data/other_attributes/race_ethnicity/`)
 
 ### Age-Stratified Contact Matrices
 
@@ -41,9 +41,9 @@ When using the contact data provided by the Epydemix package <ins>**please ensur
 ## Supported Geographies
 
 Each demographic attribute has its own `locations.csv` file listing the supported regions and available data sources. The following files are currently available:
-- [data/age/locations.csv](https://github.com/epistorm/epydemix-data/blob/main/data/age/locations.csv)
-- [data/sex/locations.csv](https://github.com/epistorm/epydemix-data/blob/main/data/sex/locations.csv)
-- [data/race_ethnicity/locations.csv](https://github.com/epistorm/epydemix-data/blob/main/data/race_ethnicity/locations.csv)
+- [locations.csv](https://github.com/epistorm/epydemix-data/blob/main/locations.csv)
+- [data/other_attributes/sex/locations.csv](https://github.com/epistorm/epydemix-data/blob/main/data/other_attributes/sex/locations.csv)
+- [data/other_attributes/race_ethnicity/locations.csv](https://github.com/epistorm/epydemix-data/blob/main/data/other_attributes/race_ethnicity/locations.csv)
 
 
 A sample of the age `locations.csv` file is shown below:
@@ -66,64 +66,66 @@ The file contains the following information:
 
 ### Example Folder Structure: `United_States`
 
-The data is organized by demographic dimension (e.g., `age`, `sex`, `race_ethnicity`), then by location:
+Age-stratified data lives directly under `data/`, while sex- and race/ethnicity-stratified data lives under `data/other_attributes/`:
 
 ```
-data/
-├── age/
-│   ├── locations.csv
-│   └── United_States/
-│       ├── demographic/
-│       │   └── population.csv
-│       └── contact_matrices/
-│           ├── mistry_2021/
-│           │   ├── all.csv
-│           │   ├── home.csv
-│           │   ├── work.csv
-│           │   ├── community.csv
-│           │   └── school.csv
-│           ├── litvinova_2025/
-│           │   ├── ...
-│           ├── prem_2017/
-│           │   ├── ...
-│           └── prem_2021/
-│               ├── ...
-├── sex/
-│   ├── locations.csv
-│   └── United_States/
-│       ├── demographic/
-│       │   └── population.csv
-│       └── contact_matrices/
-│           └── litvinova_2025/
-│               ├── all.csv
-│               ├── home.csv
-│               ├── work.csv
-│               ├── community.csv
-│               └── school.csv
-└── race_ethnicity/
-    ├── locations.csv
-    └── United_States/
-        ├── demographic/
-        │   └── population.csv
-        └── contact_matrices/
-            └── litvinova_2025/
-                ├── all.csv
-                ├── home.csv
-                ├── work.csv
-                ├── community.csv
-                └── school.csv
+epydemix-data/
+├── locations.csv
+└── data/
+    ├── United_States/
+    │   ├── demographic/
+    │   │   └── age_distribution.csv
+    │   └── contact_matrices/
+    │       ├── mistry_2021/
+    │       │   ├── contacts_matrix_all.csv
+    │       │   ├── contacts_matrix_home.csv
+    │       │   ├── contacts_matrix_work.csv
+    │       │   ├── contacts_matrix_community.csv
+    │       │   └── contacts_matrix_school.csv
+    │       ├── litvinova_2025/
+    │       │   ├── ...
+    │       ├── prem_2017/
+    │       │   ├── ...
+    │       └── prem_2021/
+    │           ├── ...
+    └── other_attributes/
+        ├── sex/
+        │   ├── locations.csv
+        │   └── United_States/
+        │       ├── demographic/
+        │       │   └── population.csv
+        │       └── contact_matrices/
+        │           └── litvinova_2025/
+        │               ├── contacts_matrix_all.csv
+        │               ├── contacts_matrix_home.csv
+        │               ├── contacts_matrix_work.csv
+        │               ├── contacts_matrix_community.csv
+        │               └── contacts_matrix_school.csv
+        └── race_ethnicity/
+            ├── locations.csv
+            └── United_States/
+                ├── demographic/
+                │   └── population.csv
+                └── contact_matrices/
+                    └── litvinova_2025/
+                        ├── contacts_matrix_all.csv
+                        ├── contacts_matrix_home.csv
+                        ├── contacts_matrix_work.csv
+                        ├── contacts_matrix_community.csv
+                        └── contacts_matrix_school.csv
 ```
 Where:
 - **`demographic/`**: Contains demographic data for the population of the United States.
-  - **`population.csv`**: A CSV file detailing the population distribution by demographic group.
+  - **`age_distribution.csv`**: A CSV file detailing the age distribution of the population (age-stratified data only).
+  - **`population.csv`**: A CSV file detailing the population distribution by demographic group (sex- and race/ethnicity-stratified data).
 
 - **`contact_matrices/`**: This directory contains the contact matrices, which describe interaction patterns between different demographic groups in various contexts.
   - **`mistry_2021/`**: Contains contact matrices from the Mistry 2021 study, with data separated by context (e.g., home, work, school, community).
-    - **`all.csv`**: Aggregated contact matrix across all contexts.
-    - **`home.csv`**: Contact matrix for interactions within households.
-    - **`work.csv`**: Contact matrix for workplace interactions.
-    - **`community.csv`**: Contact matrix for community-based interactions.
-    - **`school.csv`**: Contact matrix for interactions in schools.
+    - **`contacts_matrix_all.csv`**: Aggregated contact matrix across all contexts.
+    - **`contacts_matrix_home.csv`**: Contact matrix for interactions within households.
+    - **`contacts_matrix_work.csv`**: Contact matrix for workplace interactions.
+    - **`contacts_matrix_community.csv`**: Contact matrix for community-based interactions.
+    - **`contacts_matrix_school.csv`**: Contact matrix for interactions in schools.
   - **`litvinova_2025/`**: Contains contact matrices from Litvinova et al. 2025, also structured by context.
   - **`prem_2017/`**: Contains similar contact matrix files from the Prem 2017 study, broken down by the same contexts (home, work, school, community, all).
   - **`prem_2021/`**: Contains updated contact matrices from the Prem 2021 study, also structured by context.
