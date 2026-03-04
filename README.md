@@ -87,6 +87,8 @@ For the United States, additional contact matrices and population data stratifie
 
 Each attribute follows the same folder structure as the age data, with `population.csv` in place of `age_distribution.csv` for the demographic file.
 
+**Note**: US population division between sexes and race/ethnicities is sourced from the dataset *Decennial Census, DEC Demographic Profile, Table DP1*, while total population counts and age division from the *Annual Resident Population Estimates by Age, Sex, Race, and Hispanic Origin*, both released from the U.S. Census Bureau.
+
 ---
 
 ### Using Data with the **Epydemix** Package
